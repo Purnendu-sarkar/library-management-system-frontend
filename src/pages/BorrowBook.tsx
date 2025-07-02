@@ -45,8 +45,8 @@ export default function BorrowBook() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Borrow Book</h1>
-      <div className="grid gap-4 max-w-md">
+      <h1 className="text-2xl font-bold text-center mb-4">Borrow Book</h1>
+      <div className="grid gap-4 max-w-md mx-auto">
         <div>
           <Label htmlFor="quantity">Quantity</Label>
           <Input

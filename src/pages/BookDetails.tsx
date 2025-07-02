@@ -13,7 +13,7 @@ export default function BookDetails() {
   console.log("Book Data:", book);
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="w-fit mx-auto p-4">
       <Card>
         <CardHeader>
           <CardTitle>{book.data.title}</CardTitle>

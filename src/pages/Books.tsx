@@ -38,7 +38,7 @@ export default function Books() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">All Books</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">All Books</h1>
       <Table>
         <TableHeader>
           <TableRow>

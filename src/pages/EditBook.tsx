@@ -72,8 +72,8 @@ export default function EditBook() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Edit Book</h1>
-      <div className="grid gap-4 max-w-md">
+      <h1 className="text-2xl font-bold mb-4 text-center">Edit Book</h1>
+      <div className="grid gap-4 max-w-md mx-auto">
         <div>
           <Label htmlFor="title">Title</Label>
           <Input
