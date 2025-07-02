@@ -69,8 +69,27 @@ export default function BorrowBook() {
           <Input
             id="dueDate"
             type="date"
+            min={(() => {
+              const tomorrow = new Date();
+              tomorrow.setDate(tomorrow.getDate() + 1);
+              return tomorrow.toISOString().split("T")[0];
+            })()}
             value={borrowData.dueDate}
-            onChange={(e) => handleInputChange(e, "dueDate")}
+            onChange={(e) => {
+              const selectedDate = new Date(e.target.value);
+              const tomorrow = new Date();
+              tomorrow.setDate(tomorrow.getDate() + 1);
+              tomorrow.setHours(0, 0, 0, 0);
+
+              if (selectedDate < tomorrow) {
+                toast(
+                  "Due date must be a future date (starting from tomorrow)"
+                );
+                return;
+              }
+
+              handleInputChange(e, "dueDate");
+            }}
           />
         </div>
         <Button onClick={handleSubmit} disabled={isLoading}>
