@@ -52,8 +52,16 @@ export default function BorrowBook() {
           <Input
             id="quantity"
             type="number"
-            value={borrowData.quantity}
-            onChange={(e) => handleInputChange(e, "quantity")}
+            placeholder="Enter number of copies"
+            value={borrowData.quantity === 1 ? "" : borrowData.quantity}
+            onChange={(e) => {
+              const value = parseInt(e.target.value);
+              if (value < 1) {
+                toast("You must borrow at least 1 book");
+                return;
+              }
+              handleInputChange(e, "quantity");
+            }}
           />
         </div>
         <div>

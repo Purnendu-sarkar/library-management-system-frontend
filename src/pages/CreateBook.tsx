@@ -114,7 +114,14 @@ export default function CreateBook() {
             placeholder="Number of available copies"
             type="number"
             value={bookData.copies === 0 ? "" : bookData.copies}
-            onChange={(e) => handleInputChange(e, "copies")}
+            onChange={(e) => {
+              const value = parseInt(e.target.value);
+              if (value < 1) {
+                toast("Minimum 1 copy is required");
+                return;
+              }
+              handleInputChange(e, "copies");
+            }}
           />
         </div>
         <Button onClick={handleSubmit} disabled={isLoading}>
