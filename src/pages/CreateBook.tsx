@@ -21,7 +21,7 @@ export default function CreateBook() {
   const [bookData, setBookData] = useState<BookData>({
     title: "",
     author: "",
-    genre: "FICTION",
+    genre: "",
     isbn: "",
     description: "",
     copies: 0,
@@ -56,6 +56,7 @@ export default function CreateBook() {
           <Label htmlFor="title">Title</Label>
           <Input
             id="title"
+            placeholder="Enter book title"
             value={bookData.title}
             onChange={(e) => handleInputChange(e, "title")}
           />
@@ -64,6 +65,7 @@ export default function CreateBook() {
           <Label htmlFor="author">Author</Label>
           <Input
             id="author"
+            placeholder="Enter author's name"
             value={bookData.author}
             onChange={(e) => handleInputChange(e, "author")}
           />
@@ -76,6 +78,9 @@ export default function CreateBook() {
             onChange={(e) => handleInputChange(e, "genre")}
             className="w-full p-2 border rounded-md"
           >
+            <option value="" disabled>
+              Select a genre
+            </option>
             <option value="FICTION">Fiction</option>
             <option value="NON_FICTION">Non-Fiction</option>
             <option value="SCIENCE">Science</option>
@@ -88,6 +93,7 @@ export default function CreateBook() {
           <Label htmlFor="isbn">ISBN</Label>
           <Input
             id="isbn"
+            placeholder="Enter ISBN number"
             value={bookData.isbn}
             onChange={(e) => handleInputChange(e, "isbn")}
           />
@@ -96,6 +102,7 @@ export default function CreateBook() {
           <Label htmlFor="description">Description</Label>
           <Input
             id="description"
+            placeholder="Brief description of the book"
             value={bookData.description}
             onChange={(e) => handleInputChange(e, "description")}
           />
@@ -104,8 +111,9 @@ export default function CreateBook() {
           <Label htmlFor="copies">Copies</Label>
           <Input
             id="copies"
+            placeholder="Number of available copies"
             type="number"
-            value={bookData.copies}
+            value={bookData.copies === 0 ? "" : bookData.copies}
             onChange={(e) => handleInputChange(e, "copies")}
           />
         </div>
