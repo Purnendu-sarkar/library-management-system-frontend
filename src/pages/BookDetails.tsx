@@ -1,6 +1,7 @@
 import { useGetBookByIdQuery } from "@/redux/api/bookApi";
 import { useParams } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Loader from "@/components/Loader";
 
 export default function BookDetails() {
   const { id } = useParams();
@@ -8,7 +9,7 @@ export default function BookDetails() {
 
   const { data: book, isLoading } = useGetBookByIdQuery(id);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader /> ;
   if (!book) return <div>Book not found</div>;
   console.log("Book Data:", book);
 

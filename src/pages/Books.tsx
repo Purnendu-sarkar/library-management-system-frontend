@@ -20,6 +20,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import Loader from "@/components/Loader";
 
 export default function Books() {
   const { data: books, isLoading } = useGetAllBooksQuery(undefined);
@@ -34,7 +35,7 @@ export default function Books() {
     }
   };
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader /> ;
 
   return (
     <div className="container mx-auto p-4">

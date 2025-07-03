@@ -7,11 +7,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Loader from "@/components/Loader";
 
 export default function BorrowSummary() {
   const { data: summary, isLoading } = useGetBorrowSummaryQuery(undefined);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader />;
 
   return (
     <div className="container mx-auto p-4">

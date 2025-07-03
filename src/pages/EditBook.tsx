@@ -8,6 +8,7 @@ import {
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { useNavigate, useParams } from "react-router-dom";
+import Loader from "@/components/Loader";
 
 type BookData = {
   title: string;
@@ -45,7 +46,7 @@ export default function EditBook() {
     }
   }, [book]);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader />;
   if (!book) return <div>Book not found</div>;
 
   const handleInputChange = (

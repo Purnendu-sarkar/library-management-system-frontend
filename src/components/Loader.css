@@ -1,0 +1,199 @@
+ :root {
+  --loader-main: #000;
+  --loader-accent: #e81512;
+}
+
+.dark {
+  --loader-main: #fff;
+  --loader-accent: #e81512;
+}
+
+#cssload-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 15;
+  overflow: hidden;
+}
+
+.cssload-loader {
+  width: 146px;
+  height: 146px;
+  border: 1px var(--loader-main) solid;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -73px 0 0 -73px;
+  border-radius: 50%;
+}
+
+.cssload-loader .cssload-loading {
+  font-size: 10px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 14px;
+  font-family: "Century Gothic", sans-serif;
+  font-style: italic;
+  left: 0;
+  top: 50%;
+  margin-top: 19px;
+  color: var(--loader-main);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.cssload-loader-circle-1 {
+  width: 135px;
+  height: 135px;
+  left: 5px;
+  top: 5px;
+  border: 1px var(--loader-main) solid;
+  position: absolute;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 3.45s linear infinite;
+}
+
+.cssload-loader-circle-2 {
+  width: 123px;
+  height: 123px;
+  left: 5px;
+  top: 5px;
+  border: 1px transparent solid;
+  position: absolute;
+  border-right-color: var(--loader-accent);
+  border-radius: 50%;
+  animation: spin 5.75s linear infinite;
+}
+
+.cssload-line {
+  width: 10px;
+  height: 2px;
+  background: var(--loader-main);
+  position: absolute;
+}
+
+.cssload-line:nth-child(1) {
+  left: 16px;
+  top: 50%;
+  margin-top: -1px;
+}
+
+.cssload-line:nth-child(2) {
+  transform: rotate(45deg);
+  left: 32px;
+  top: 32px;
+}
+
+.cssload-line:nth-child(3) {
+  top: 16px;
+  left: 50%;
+  width: 2px;
+  height: 10px;
+}
+
+.cssload-line:nth-child(4) {
+  transform: rotate(135deg);
+  right: 32px;
+  top: 32px;
+}
+
+.cssload-line:nth-child(5) {
+  right: 16px;
+  top: 50%;
+  margin-top: -1px;
+}
+
+.cssload-line:nth-child(6) {
+  transform: rotate(45deg);
+  right: 32px;
+  bottom: 32px;
+  background: var(--loader-accent);
+}
+
+.cssload-subline {
+  position: absolute;
+  width: 3px;
+  height: 2px;
+  background: var(--loader-main);
+}
+
+.cssload-subline:nth-child(11) {
+  background: var(--loader-accent);
+}
+
+.cssload-subline:nth-child(7) {
+  transform: rotate(22.5deg);
+  left: 20px;
+  top: 49px;
+}
+
+.cssload-subline:nth-child(8) {
+  transform: rotate(67.5deg);
+  left: 49px;
+  top: 20px;
+}
+
+.cssload-subline:nth-child(9) {
+  transform: rotate(112.5deg);
+  right: 49px;
+  top: 20px;
+}
+
+.cssload-subline:nth-child(10) {
+  transform: rotate(157.5deg);
+  right: 20px;
+  top: 49px;
+}
+
+.cssload-subline:nth-child(11) {
+  transform: rotate(22.5deg);
+  right: 19px;
+  bottom: 48px;
+}
+
+.cssload-needle {
+  width: 14px;
+  height: 14px;
+  border: 1px var(--loader-main) solid;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -8px 0 0 -8px;
+  z-index: 1;
+  border-radius: 50%;
+  animation: pegIt 3.45s infinite ease-in-out;
+}
+
+.cssload-needle:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.5px 49px 3.5px 0;
+  border-color: transparent var(--loader-accent) transparent transparent;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  margin: -3.5px 0 0 0;
+  border-radius: 0 50% 50% 0;
+}
+
+@keyframes pegIt {
+  0% { transform: rotate(0deg); }
+  16% { transform: rotate(75deg); }
+  25% { transform: rotate(55deg); }
+  30% { transform: rotate(90deg); }
+  36% { transform: rotate(170deg); }
+  42% { transform: rotate(150deg); }
+  50% { transform: rotate(227deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
