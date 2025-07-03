@@ -1,4 +1,4 @@
-# Minimal Library Management System (Frontend) 📚
+# 📚 Library Management System (Frontend)
 
 A modern, responsive, and type-safe frontend for a Library Management System built with **React**, **TypeScript**, and **Redux Toolkit Query**. This application enables users to manage books, perform CRUD operations, borrow books, and view a summary of borrowed books by integrating with a RESTful backend API. It features a clean, minimalist UI with seamless navigation and user-friendly interactions using **Tailwind CSS** and **shadcn/ui** components.
 
