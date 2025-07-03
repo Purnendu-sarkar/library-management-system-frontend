@@ -76,7 +76,8 @@ export default function CreateBook() {
             id="genre"
             value={bookData.genre}
             onChange={(e) => handleInputChange(e, "genre")}
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md bg-white text-gray-900
+             dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600"
           >
             <option value="" disabled>
               Select a genre
