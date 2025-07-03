@@ -128,7 +128,14 @@ export default function EditBook() {
             id="copies"
             type="number"
             value={bookData.copies}
-            onChange={(e) => handleInputChange(e, "copies")}
+            onChange={(e) => {
+              const value = parseInt(e.target.value);
+              if (value < 0) {
+                toast("Copies cannot be negative");
+                return;
+              }
+              handleInputChange(e, "copies");
+            }}
           />
         </div>
         <Button onClick={handleSubmit} disabled={isLoading}>

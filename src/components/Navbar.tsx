@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Navbar() {
   return (
@@ -8,14 +9,23 @@ export default function Navbar() {
         <h1 className="text-white text-2xl font-bold">Library Management</h1>
         <div className="space-x-4">
           <Link to="/books">
-            <Button variant="ghost" className="text-white">All Books</Button>
+            <Button variant="ghost" className="text-white">
+              All Books
+            </Button>
           </Link>
           <Link to="/create-book">
-            <Button variant="ghost" className="text-white">Add Book</Button>
+            <Button variant="ghost" className="text-white">
+              Add Book
+            </Button>
           </Link>
           <Link to="/borrow-summary">
-            <Button variant="ghost" className="text-white">Borrow Summary</Button>
+            <Button variant="ghost" className="text-white">
+              Borrow Summary
+            </Button>
           </Link>
+          <div className="">
+            <ModeToggle />
+          </div>
         </div>
       </div>
     </nav>
