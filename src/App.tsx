@@ -9,6 +9,7 @@ import BorrowBook from "./pages/BorrowBook";
 import BorrowSummary from "./pages/BorrowSummary";
 import { Toaster } from "@/components/ui/sonner";
 import "./index.css";
+import Page404 from "./components/Page404";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
           <Route path="/borrow/:bookId" element={<BorrowBook />} />
           <Route path="/borrow-summary" element={<BorrowSummary />} />
           <Route path="/" element={<Books />} />
+          <Route path="*" element={<Page404 />} />
+
         </Routes>
       </main>
       <Toaster />
