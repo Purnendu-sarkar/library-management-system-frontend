@@ -10,6 +10,11 @@ The Minimal Library Management System (Frontend) provides an intuitive interface
 
 ---
 
+## Live Site
+
+[Visit Library Management System Live Site]((https://library-management-system-frontend-ecru.vercel.app/))
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen)](https://library-management-system-frontend-ecru.vercel.app/))
+
 ## 🛠️ Technology Stack
 
 - **React** – Component-based UI library for building interactive interfaces.
